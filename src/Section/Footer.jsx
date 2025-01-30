@@ -1,5 +1,4 @@
 import React from 'react';
-import tiger from '../Assests/tiger.gif'
 
 const Footer = () => {
   return (

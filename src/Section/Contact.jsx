@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import hack from '../Assests/hack.gif';
 import tiger from '../Assests/tiger.gif';
-// import '../styles/Contact.css'; // Import the CSS file for animations
 
 const Contact = () => {
   const [formData, setFormData] = useState({
