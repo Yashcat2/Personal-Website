@@ -2,8 +2,9 @@ import PanelPro from '../../../Assests/ProjectAssests/panelPro.png'
 import tourly from '../../../Assests/ProjectAssests/t2.png';
 import ml from '../../../Assests/ProjectAssests/ml.jpg';
 import ff from '../../../Assests/ProjectAssests/ff.png';
-
-
+import pms from '../../../Assests/ProjectAssests/pms.png';
+import lps from '../../../Assests/ProjectAssests/lps.png';
+import gui from '../../../Assests/ProjectAssests/gui.png';
 
 const projects = [
     {
@@ -20,7 +21,7 @@ const projects = [
       description:
         'eveloped and deployed a fully functional eCommerce website for a laptop store using the MERN stack (MongoDB, Express.js, React.js, Node.js). The platform provides a seamless shopping experience for users and an advanced admin dashboard for managing the store.',
       imageSrc:
-        'https://media.licdn.com/dms/image/D562DAQHGk3iUrsmKyQ/profile-treasury-image-shrink_1920_1920/0/1706068030652?e=1708866000&v=beta&t=Ri6uZlgb7mW_x--3xoTXzvfE7SlKOZog61hOe7AKol8',
+          lps,
       techUsed: ['React.js', 'Node.js', 'Express.js', ' MongoDB',' Stripe',' Razorpay',' Vercel.'],
       date: 'April 2024 - Present',
     },
@@ -29,7 +30,7 @@ const projects = [
       description:
         'eveloped a comprehensive desktop application for managing patient records, appointments, and essential medical data. This project demonstrated proficiency in the .NET Framework and database integration, showcasing a deep understanding of building secure and reliable applications.',
       imageSrc:
-        'https://media.licdn.com/dms/image/sync/D4E27AQE6PWMmaA8xvg/articleshare-shrink_800/0/1707808784067?e=1708866000&v=beta&t=PMRQaoOvlBRCkCUwMhaeK0to5sqxiFBMojGV-5eBa2U',
+          pms ,
       techUsed: [' C#',' .NET Framework',' MSSQLLocalDB ','XML ','CRUD'],
       date: 'Oct 2023 - Jan 2024',
     },
@@ -57,7 +58,7 @@ const projects = [
       description:
         'Financial tracker is a comprehensive web application developed for our 3rd-semester project on the GUIModule. This project challenged us to implement our GUI module learnings effectively. From HTML structuring to JavaScript functionality and CSS styling, every aspect has been carefully curated to provide users with a powerful yet easy-to-use financial tool. ',
       imageSrc:
-        'https://img.freepik.com/free-vector/laptop-with-binary-code-screen_1308-114319.jpg?size=626&ext=jpg&ga=GA1.2.79614261.1705226691&semt=ais',
+          gui,
       techUsed: [' HTML',' CSS',' JavaScript' ],
       date: 'Sept 2023 ',
     },

@@ -348,3 +348,25 @@ code {
 .animate-slide-vertical {
   animation: slide-vertical 2s linear infinite;
 }
+
+
+.slick-prev,
+.slick-next {
+  font-size: 2.5rem !important; /* Increase icon size */
+  width: 60px !important; /* Increase button width */
+  height: 60px !important; /* Increase button height */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 3rem !important; /* Change default Slick arrow size */
+  color: white !important; /* Change arrow color */
+}
+
+.slick-prev {
+  left: -70px !important; /* Adjust position */
+}
+
+.slick-next {
+  right: -70px !important; /* Adjust position */
+}

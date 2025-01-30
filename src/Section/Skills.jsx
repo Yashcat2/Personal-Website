@@ -8,7 +8,7 @@ const Skills = () => {
     <section id='skills'  className=''>
     <div className='mt-8 mx-4 md:mx-16'>
       {/* Add an H1 tag for the heading */}
-      <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-center  text-white mt-20 mb-20'>
+      <h1 className='text-2xl md:text-3xl lg:text-5xl font-bold text-center font-badscript  text-white mt-20 mb-20'>
         My Skills
       </h1> 
      

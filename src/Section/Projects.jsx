@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import projects from './Components/ProjectSection/ProjectData';
+import 'boxicons'
 
 const ProjectCard = ({ project }) => {
   return (
@@ -76,11 +77,11 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-12 bg-transparent  ">
+    <section id="projects" className="py-12 bg-transparent rounded ">
       <div className="container mx-auto px-6">
-        <h1 className="text-3xl font-bold text-center text-white mb-8">
-          My Projects
-        </h1>
+      <h1 className="text-5xl font-bold text-center text-white mb-8 font-badscript">
+        My Projects
+      </h1>
         <Slider {...settings}>
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
@@ -95,11 +96,11 @@ const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} absolute top-1/2 right-0 transform -translate-y-1/2 bg-white/30 p-3 rounded-full cursor-pointer hover:bg-white/50`}
-      style={{ ...style, display: 'block' }}
+      className={`${className} slick-next !w-[60px] !h-[60px] bg-white/30 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center`}
+      style={{ ...style, display: 'block', fontSize: '3rem' }}
       onClick={onClick}
     >
-      ➜
+      {/* <i className="bx bx-chevron-right text-white text-5xl"></i> */}
     </div>
   );
 };
@@ -108,11 +109,11 @@ const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} absolute top-1/2 left-0 transform -translate-y-1/2 bg-white/30 p-3 rounded-full cursor-pointer hover:bg-white/50`}
-      style={{ ...style, display: 'block' }}
+      className={`${className} slick-prev !w-[60px] !h-[60px] bg-blue-700 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center`}
+      style={{ ...style, display: 'block', fontSize: '3rem' }}
       onClick={onClick}
     >
-      ◀
+      {/* <i className="bx bx-chevron-left text-white text-5xl"></i> */}
     </div>
   );
 };

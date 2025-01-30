@@ -81,7 +81,7 @@ const Home = () => {
         <img
           src="yash2.jpeg"
           alt="Profile Picture"
-          className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer"
+          className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer "
         />
       </div>
     </section>

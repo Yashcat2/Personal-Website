@@ -9,7 +9,7 @@ const Navbar = () => {
       {/* Logo */}
       <a
         href="#home"
-        className="text-xl md:text-2xl font-extrabold text-[var(--text-color)] cursor-pointer transition ease-in-out duration-200 hover:scale-110"
+        className="text-xl md:text-2xl font-extrabold text-[var(--text-color)]  ml-16 cursor-pointer transition ease-in-out duration-200 hover:scale-110"
         onClick={() => setActiveLink("#home")}
       >
         Yashodha{' '}
@@ -25,7 +25,7 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           offset={-70}
-          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 border-b-[3px] ${activeLink === "#home" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
+          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 cursor-pointer border-b-[3px] ${activeLink === "#home" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
           onClick={() => setActiveLink("#home")}
         >
           Home
@@ -35,7 +35,7 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           offset={-70}
-          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 border-b-[3px] ${activeLink === "#skills" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
+          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 cursor-pointer border-b-[3px] ${activeLink === "#skills" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
           onClick={() => setActiveLink("#skills")}
         >
           Skills
@@ -45,7 +45,7 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           offset={-70}
-          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 border-b-[3px] ${activeLink === "#projects" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
+          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 cursor-pointer border-b-[3px] ${activeLink === "#projects" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
           onClick={() => setActiveLink("#projects")}
         >
           Projects
@@ -55,7 +55,7 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           offset={-70}
-          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 border-b-[3px] ${activeLink === "#contact" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
+          className={`text-sm md:text-base font-medium text-[var(--text-color)] transition ease-in-out duration-300 cursor-pointer border-b-[3px] ${activeLink === "#contact" ? "border-[#00b3ff] text-[#00b3ff]" : "border-transparent hover:text-[#00b3ff] hover:border-[#00b3ff]"}`}
           onClick={() => setActiveLink("#contact")}
         >
           Contact
