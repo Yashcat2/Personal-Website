@@ -19,7 +19,7 @@ import java from '../../../Assests/tech/java.svg';
 import mysql from '../../../Assests/tech/mysql.svg';
 import next from '../../../Assests/tech/n2.png';
 // import postman from '../../../Assests/tech/postman.svg';
-import sqlite from '../../../Assests/tech/sqlite.svg';
+// import sqlite from '../../../Assests/tech/sqlite.svg';
 import python from '../../../Assests/tech/python.png';
 import cp from '../../../Assests/tech/c++.png';
 import html from '../../../Assests/tech/html.png';

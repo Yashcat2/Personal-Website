@@ -87,7 +87,7 @@ const Home = () => {
 >
   <img
     src="yash2.jpeg"
-    alt="Profile Picture"
+    alt="yash"
     className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer transform transition-transform duration-1000 text-shadow-main-color box-shadow-main-color hover:scale-110 hover:rotate-6 hover:box-shadow-main-color-hover"
   />
 </div>
