@@ -352,7 +352,7 @@ code {
   display: inline-block;
   font-family: 'Bad Script', cursive;
   animation: contactAnimate 2s linear infinite;
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 5.5rem; /* Default font size */
 }
 

@@ -5,7 +5,7 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState("#home");
 
   return (
-    <div className="fixed top-0 left-0 w-full px-6 md:px-[150px] py-4 bg-black flex justify-between items-center z-50">
+    <div className="fixed top-0 left-0 w-full sm:h-[50px] px-6 md:px-[150px] py-4 bg-black flex justify-between items-center z-50">
       {/* Logo */}
       <a
         href="#home"
