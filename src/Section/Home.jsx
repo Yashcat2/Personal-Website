@@ -17,7 +17,7 @@ const Home = () => {
 
       {/* Home Content */}
       <div
-        className={`flex flex-col text-center md:text-left items-center md:items-start justify-center relative z-10 transition-transform duration-1000 ${
+        className={`flex flex-col text-center md:text-left  items-center md:items-start justify-center relative z-10 transition-transform duration-1000 ${
           isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}
       >
@@ -37,15 +37,15 @@ const Home = () => {
         </p>
 
         {/* Social Icons */}
-        <div className="flex justify-center md:justify-start space-x-6 mt-8">
+          <div className="flex justify-center md:justify-start space-x-6 mt-8">
           {[
-            { name: "linkedin-square", url: "https://www.linkedin.com/in/your-profile" },
-            { name: "twitter", url: "https://twitter.com/your-profile" },
-            { name: "github", url: "https://github.com/your-profile" },
-            { name: "whatsapp", url: "https://wa.me/your-number" }
+            { name: "linkedin-square", url: "https://www.linkedin.com/in/yashodha-gunawardhana/" },
+            { name: "gmail", url: "mailto:your-ikykgunawardhana@gmail.com" }, 
+            { name: "github", url: "https://github.com/Yashcat2" },
+            { name: "whatsapp", url: "https://wa.me/+94703199598" }
           ].map((icon) => (
             <a
-              key={icon.name}
+              key={icon.url} // Use the URL as the key
               href={icon.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -54,7 +54,8 @@ const Home = () => {
               <i className={`bx bxl-${icon.name}`}></i>
             </a>
           ))}
-        </div>
+          </div>
+
 
         {/* Buttons */}
         <div
@@ -80,16 +81,17 @@ const Home = () => {
 
       {/* Home Image */}
       <div
-        className={`relative transition-transform duration-1000 ${
-          isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-        }`}
-      >
-        <img
-          src="yash2.jpeg"
-          alt="Yashodha Gunawardhana"
-          className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer"
-        />
-      </div>
+  className={`relative transition-transform duration-1000 ${
+    isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+  }`}
+>
+  <img
+    src="yash2.jpeg"
+    alt="Profile Picture"
+    className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer transform transition-transform duration-1000 text-shadow-main-color box-shadow-main-color hover:scale-110 hover:rotate-6 hover:box-shadow-main-color-hover"
+  />
+</div>
+
     </section>
   );
 };

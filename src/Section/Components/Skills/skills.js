@@ -5,25 +5,55 @@ import javascript from '../../../Assests/tech/javascript.png';
 import mongodb from '../../../Assests/tech/mongodb.png';
 import nodejs from '../../../Assests/tech/nodejs.png';
 import reactjs from '../../../Assests/tech/reactjs.png';
-import redux from '../../../Assests/tech/redux.png';
+// import redux from '../../../Assests/tech/redux.png';
 import tailwind from '../../../Assests/tech/tailwind.png';
 import typescript from '../../../Assests/tech/typescript.png';
 import c from '../../../Assests/tech/c.svg';
-import chart from '../../../Assests/tech/chart.svg';
-import csharp from '../../../Assests/tech/csharp.svg';
+// import chart from '../../../Assests/tech/chart.svg';
+// import csharp from '../../../Assests/tech/csharp.svg';
 import dart from '../../../Assests/tech/dart.svg';
-import electron from '../../../Assests/tech/electron.svg';
+// import electron from '../../../Assests/tech/electron.svg';
 import firebase from '../../../Assests/tech/firebase.svg';
 import flutter from '../../../Assests/tech/flutter.svg';
 import java from '../../../Assests/tech/java.svg';
 import mysql from '../../../Assests/tech/mysql.svg';
-import pandas from '../../../Assests/tech/pandas.svg';
+import next from '../../../Assests/tech/n2.png';
 // import postman from '../../../Assests/tech/postman.svg';
 import sqlite from '../../../Assests/tech/sqlite.svg';
+import python from '../../../Assests/tech/python.png';
+import cp from '../../../Assests/tech/c++.png';
+import html from '../../../Assests/tech/html.png';
+import express from '../../../Assests/tech/express.png';
+import dotnet from '../../../Assests/tech/dot2.png';
+import jira from '../../../Assests/tech/jira.png';
+import android from '../../../Assests/tech/android.png';
+import linux from '../../../Assests/tech/linux.png';
+import docker from '../../../Assests/tech/docker.png';
+import jenikins from '../../../Assests/tech/jenikins.png';
 
 
 
 let technologies = [
+  {
+    name: 'Python',
+    icon: python,
+  },
+  {
+    name: 'C',
+    icon: c,
+  },
+  {
+    name: 'C++',
+    icon: cp,
+  },
+  {
+    name: 'Java',
+    icon: java,
+  },
+  {
+    name: 'HTML 5',
+    icon: html,
+  },
     {
       name: 'CSS 3',
       icon: css,
@@ -41,8 +71,8 @@ let technologies = [
       icon: reactjs,
     },
     {
-      name: 'Redux Toolkit',
-      icon: redux,
+      name: 'Next JS',
+      icon: next,
     },
     {
       name: 'Tailwind CSS',
@@ -52,6 +82,16 @@ let technologies = [
       name: 'Node JS',
       icon: nodejs,
     },
+    {
+      name: 'Express JS',
+      icon: express,
+    },
+    
+    {
+      name: '.NET',
+      icon: dotnet,
+    },
+    
     {
       name: 'MongoDB',
       icon: mongodb,
@@ -66,25 +106,20 @@ let technologies = [
       icon: figma,
     },
     {
-      name: 'C',
-      icon: c,
+      name: 'Jira',
+      icon: jira,
     },
+    
     {
-      name: 'Chart',
-      icon: chart,
+      name: 'Android',
+      icon: android,
     },
-    {
-      name: 'C#',
-      icon: csharp,
-    },
+    
     {
       name: 'Dart',
       icon: dart,
     },
-    {
-      name: 'Electron',
-      icon: electron,
-    },
+    
     {
       name: 'Firebase',
       icon: firebase,
@@ -93,25 +128,25 @@ let technologies = [
       name: 'Flutter',
       icon: flutter,
     },
-    {
-      name: 'Java',
-      icon: java,
-    },
+    
     {
       name: 'MySQL',
       icon: mysql,
     },
+  
+   
+  
     {
-      name: 'Pandas',
-      icon: pandas,
+      name: 'Linux',
+      icon: linux,
     },
-    // {
-    //   name: 'Postman',
-    //   icon: postman,
-    // },
     {
-      name: 'SQLite',
-      icon: sqlite,
+      name: 'Docker',
+      icon: docker,
+    },
+    {
+      name: 'Jenkins',
+      icon: jenikins,
     },
   ];
   

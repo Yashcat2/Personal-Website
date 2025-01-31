@@ -31,26 +31,27 @@ code {
   text-shadow: 0 0 25px var(--main-color);
 }
 
-.box-shadow-main-color{
+.box-shadow-main-color {
   box-shadow: 0 0 25px var(--main-color);
 }
 
-.box-shadow-main-color-hover{
+.box-shadow-main-color-hover {
   transform: scale(1.05);
-
-  box-shadow: 0 0 50px var(--main-color);
+  box-shadow: 0 0 100px var(--main-color); /* Increase the size of the shadow */
 }
+
 .text-animation {
   font-size: 34px;
   font-weight: 600;
   min-width: 280px;
   background: transparent;
+  width: 100%; /* Make the width responsive */
+  text-align: center; /* Center the text */
 }
 
 .text-animation span {
   position: relative;
   background: transparent;
-
 }
 
 .text-animation span::before {
@@ -58,7 +59,8 @@ code {
   color: var(--main-color);
   animation: words 20s infinite;
   background: transparent;
-
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .text-animation span::after {
@@ -127,6 +129,39 @@ code {
     width: calc(100% + 8px);
   }
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .text-animation {
+    font-size: 28px; /* Reduce font size for tablets and small screens */
+    
+  }
+
+  .text-animation span::before {
+    font-size: 24px; /* Adjust text size of the animated words */
+  }
+
+  .text-animation span::after {
+    height: 100%; /* Reduce cursor height */
+    height: 110%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-animation {
+    font-size: 24px; /* Smaller font size for mobile screens */
+  }
+
+  .text-animation span::before {
+    font-size: 20px; /* Further reduce text size for mobile */
+  }
+
+  .text-animation span::after {
+    height: 80%; /* Further reduce cursor height */
+    height: 110%;
+  }
+}
+
 .contact {
   box-shadow: none !important; 
 }
@@ -293,7 +328,6 @@ code {
 .bump-animation {
   animation: bump 0.6s ease-in-out 1;
 }
-
 @keyframes contactAnimate {
   0%, 100% {
     color: #fff;
@@ -316,13 +350,66 @@ code {
 
 .contact-animation {
   display: inline-block;
-  font-family: 'Bad Script',cursive;
-  font-size: 5.5rem; /* Adjust as needed */
+  font-family: 'Bad Script', cursive;
   animation: contactAnimate 2s linear infinite;
   font-style: italic;
+  font-size: 5.5rem; /* Default font size */
 }
 
+@media (max-width: 768px) {
+  .contact-animation {
+    font-size: 3rem; /* Adjust for smaller screens */
+  }
+}
 
+@media (max-width: 480px) {
+  .contact-animation {
+    font-size: 2.5rem; /* Adjust for very small screens */
+  }
+}
+/* Default styles for the card */
+.card {
+  width: 350px; /* Default card width */
+  height: 450px; /* Default card height */
+  margin: 1rem;
+}
+
+/* Responsiveness for larger screens (above 1024px) */
+@media (max-width: 1024px) {
+  .card {
+    width: 300px; /* Reduce width for tablet screens */
+    height: 400px; /* Reduce height for tablet screens */
+  }
+}
+
+/* Responsiveness for medium screens (tablet size) */
+@media (max-width: 768px) {
+  .card {
+    width: 250px; /* Reduce width for small tablet screens */
+    height: 350px; /* Reduce height for small tablet screens */
+  }
+}
+
+/* Responsiveness for smaller screens (mobile size) */
+@media (max-width: 480px) {
+  .card {
+    width: 200px; /* Further reduce width for mobile screens */
+    height: 300px; /* Further reduce height for mobile screens */
+  }
+}
+
+/* Use flex to allow cards to be responsive */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
 @keyframes slide-horizontal {
   0% {
     transform: translateX(-100%);
@@ -347,26 +434,4 @@ code {
 
 .animate-slide-vertical {
   animation: slide-vertical 2s linear infinite;
-}
-
-
-.slick-prev,
-.slick-next {
-  font-size: 2.5rem !important; /* Increase icon size */
-  width: 60px !important; /* Increase button width */
-  height: 60px !important; /* Increase button height */
-}
-
-.slick-prev:before,
-.slick-next:before {
-  font-size: 3rem !important; /* Change default Slick arrow size */
-  color: white !important; /* Change arrow color */
-}
-
-.slick-prev {
-  left: -70px !important; /* Adjust position */
-}
-
-.slick-next {
-  right: -70px !important; /* Adjust position */
 }
