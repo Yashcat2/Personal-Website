@@ -22,8 +22,7 @@ const Home = () => {
         }`}
       >
         <h1 className="text-4xl md:text-6xl font-bold">
-          Hi, It's{" "}
-          <span className="text-main-color">Yashodha</span>
+          Hi, It's <span className="text-main-color">Yashodha</span>
         </h1>
         <h3 className="text-2xl md:text-4xl font-semibold my-4">
           I'm a{" "}
@@ -39,13 +38,20 @@ const Home = () => {
 
         {/* Social Icons */}
         <div className="flex justify-center md:justify-start space-x-6 mt-8">
-          {["linkedin-square", "twitter", "github", "whatsapp"].map((icon) => (
+          {[
+            { name: "linkedin-square", url: "https://www.linkedin.com/in/your-profile" },
+            { name: "twitter", url: "https://twitter.com/your-profile" },
+            { name: "github", url: "https://github.com/your-profile" },
+            { name: "whatsapp", url: "https://wa.me/your-number" }
+          ].map((icon) => (
             <a
-              key={icon}
-              href="#"
+              key={icon.name}
+              href={icon.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-[40px] md:w-[45px] h-[40px] md:h-[45px] border-2 border-[#00b3ff] text-[#00b3ff] rounded-full text-2xl md:text-3xl transition-transform transform hover:scale-110"
             >
-              <i className={`bx bxl-${icon}`}></i>
+              <i className={`bx bxl-${icon.name}`}></i>
             </a>
           ))}
         </div>
@@ -63,7 +69,7 @@ const Home = () => {
             Hire Me
           </a>
           <a
-            href="/cv/Yashodha%20Gunawardhana.pdf"
+            href="/cv/Yashodha_Gunawardhana.pdf"
             download="Yashodha_Gunawardhana_CV.pdf"
             className="py-3 px-8 md:py-4 md:px-12 bg-black text-[#00b3ff] font-semibold text-lg md:text-xl rounded-full border-2 border-[#00b3ff] shadow-lg transform transition-all hover:scale-105 hover:bg-[#00b3ff] hover:text-black"
           >
@@ -80,8 +86,8 @@ const Home = () => {
       >
         <img
           src="yash2.jpeg"
-          alt="Profile Picture"
-          className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer "
+          alt="Yashodha Gunawardhana"
+          className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer"
         />
       </div>
     </section>
