@@ -17,7 +17,7 @@ const Home = () => {
 
       {/* Home Content */}
       <div
-        className={`flex flex-col text-center md:text-left  items-center md:items-start justify-center relative z-10 transition-transform duration-1000 ${
+        className={`flex flex-col text-center md:text-left items-center md:items-start justify-center relative z-10 transition-transform duration-1000 ${
           isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}
       >
@@ -25,10 +25,7 @@ const Home = () => {
           Hi, It's <span className="text-main-color">Yashodha</span>
         </h1>
         <h3 className="text-2xl md:text-4xl font-semibold my-4">
-          I'm a{" "}
-          <span className="relative text-animation">
-            <span></span>
-          </span>
+          I'm a <span className="relative text-animation"><span></span></span>
         </h3>
         <p className="text-lg md:text-xl font-medium leading-relaxed max-w-[90%] md:max-w-[700px]">
           As a proactive learner and problem-solver, I thrive in dynamic
@@ -37,25 +34,24 @@ const Home = () => {
         </p>
 
         {/* Social Icons */}
-          <div className="flex justify-center md:justify-start space-x-6 mt-8">
+        <div className="flex justify-center md:justify-start space-x-6 mt-8">
           {[
             { name: "linkedin-square", url: "https://www.linkedin.com/in/yashodha-gunawardhana/" },
-            { name: "gmail", url: "mailto:your-ikykgunawardhana@gmail.com" }, 
+            { name: "gmail", url: "mailto:ikykgunawardhana@gmail.com" },
             { name: "github", url: "https://github.com/Yashcat2" },
             { name: "whatsapp", url: "https://wa.me/+94703199598" }
           ].map((icon) => (
             <a
-              key={icon.url} // Use the URL as the key
+              key={icon.url}
               href={icon.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-[40px] md:w-[45px] h-[40px] md:h-[45px] border-2 border-[#00b3ff] text-[#00b3ff] rounded-full text-2xl md:text-3xl transition-transform transform hover:scale-110"
+              className="icon-hover flex items-center justify-center w-[40px] md:w-[45px] h-[40px] md:h-[45px] border-2 border-[#00b3ff] text-[#00b3ff] rounded-full text-2xl md:text-3xl"
             >
               <i className={`bx bxl-${icon.name}`}></i>
             </a>
           ))}
-          </div>
-
+        </div>
 
         {/* Buttons */}
         <div
@@ -65,14 +61,14 @@ const Home = () => {
         >
           <a
             href="#contact"
-            className="py-3 px-8 md:py-4 md:px-12 bg-[#00b3ff] text-black font-semibold text-lg md:text-xl rounded-full border-2 border-transparent shadow-lg transform transition-all hover:scale-105"
+            className="icon-hover py-3 px-8 md:py-4 md:px-12 bg-[#00b3ff] text-black font-semibold text-lg md:text-xl rounded-full border-2 border-transparent shadow-lg transform transition-all hover:scale-105"
           >
             Hire Me
           </a>
           <a
             href="/cv/Yashodha_Gunawardhana.pdf"
             download="Yashodha_Gunawardhana_CV.pdf"
-            className="py-3 px-8 md:py-4 md:px-12 bg-black text-[#00b3ff] font-semibold text-lg md:text-xl rounded-full border-2 border-[#00b3ff] shadow-lg transform transition-all hover:scale-105 hover:bg-[#00b3ff] hover:text-black"
+            className="icon-hover py-3 px-8 md:py-4 md:px-12 bg-black text-[#00b3ff] font-semibold text-lg md:text-xl rounded-full border-2 border-[#00b3ff] shadow-lg transform transition-all hover:scale-105 hover:bg-[#00b3ff] hover:text-black"
           >
             Download CV
           </a>
@@ -81,17 +77,16 @@ const Home = () => {
 
       {/* Home Image */}
       <div
-  className={`relative transition-transform duration-1000 ${
-    isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-  }`}
->
-  <img
-    src="yash2.jpeg"
-    alt="yash"
-    className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer transform transition-transform duration-1000 text-shadow-main-color box-shadow-main-color hover:scale-110 hover:rotate-6 hover:box-shadow-main-color-hover"
-  />
-</div>
-
+        className={`relative transition-transform duration-1000 ${
+          isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        }`}
+      >
+        <img
+          src="yash2.jpeg"
+          alt="yash"
+          className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer transform transition-transform duration-1000 text-shadow-main-color box-shadow-main-color hover:scale-110 hover:rotate-6 hover:box-shadow-main-color-hover hover:shadow-[0_0_25px_var(--main-color),_0_0_50px_var(--main-color),_0_0_100px_var(--main-color)]"
+        />
+      </div>
     </section>
   );
 };
