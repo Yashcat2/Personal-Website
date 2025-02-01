@@ -409,6 +409,10 @@ code {
 .slick-slide {
   display: flex;
   justify-content: center;
+  /* overflow: visible !important; */
+  width: 100%;
+
+
 }
 @keyframes slide-horizontal {
   0% {
@@ -434,4 +438,39 @@ code {
 
 .animate-slide-vertical {
   animation: slide-vertical 2s linear infinite;
+}
+
+/* Ensure arrows are visible */
+.slick-prev,
+.slick-next {
+    display: block !important;  /* Ensure arrows are not hidden */
+}
+
+/* Increase the arrow size */
+.slick-prev:before,
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 50px !important;  /* Increase the font size */
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Increase width and height to fit the larger icons */
+.slick-prev,
+.slick-next {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 50px !important;  /* Ensure icons are large enough */
+}
+
+/* Position adjustments */
+.slick-prev {
+    left: -40px !important;  /* Adjust left position if needed */
+}
+
+.slick-next {
+    right: -40px !important;  /* Adjust right position if needed */
 }

@@ -92,30 +92,29 @@ const ProjectsSection = () => {
   );
 };
 
-const SampleNextArrow = (props) => {
-  const { className, style, onClick } = props;
+const SampleNextArrow = ({ className, style, onClick }) => {
   return (
     <div
-      className={`${className} slick-next !w-[60px] !h-[60px] bg-white/30 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center`}
-      style={{ ...style, display: 'block', fontSize: '3rem' }}
+      className={`${className} slick-next !w-[60px] !h-[60px] bg-white/30 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center absolute right-[-70px] top-1/2 transform -translate-y-1/2 !z-50`}
+      style={{ ...style, display: "flex" }}
       onClick={onClick}
     >
-      {/* Next arrow content */}
+      ➜
     </div>
   );
 };
 
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
+const SamplePrevArrow = ({ className, style, onClick }) => {
   return (
     <div
-      className={`${className} slick-prev !w-[60px] !h-[60px] bg-blue-700 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center`}
-      style={{ ...style, display: 'block', fontSize: '3rem' }}
+      className={`${className} slick-prev !w-[60px] !h-[60px] bg-white/30 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center absolute left-[-70px] top-1/2 transform -translate-y-1/2 !z-50`}
+      style={{ ...style, display: "flex" }}
       onClick={onClick}
     >
-      {/* Previous arrow content */}
+      ➜
     </div>
   );
 };
+
 
 export default ProjectsSection;
