@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
 
       {/* Second div: Footer Content */}
-      <div className="footer-content bg-gray-900 text-white py-4">
+      <div className="footer-content bg-gray-900 text-white py-4 w-full">
         <p className="text-center">All rights reserved © 2025. Created By Yashk</p>
       </div>
     </div>

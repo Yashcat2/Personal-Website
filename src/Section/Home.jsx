@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ParticlesBackground from "./Components/Background/ParticlesBackground"; // Ensure correct import
-
+import cv from '../Assests/cv/Yashodha Gunawardhana.pdf';
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -66,8 +66,8 @@ const Home = () => {
             Hire Me
           </a>
           <a
-            href="/cv/Yashodha_Gunawardhana.pdf"
-            download="Yashodha_Gunawardhana_CV.pdf"
+            href={cv}
+            download="Yashodha_Gunawardhana_Resume.pdf"
             className="icon-hover py-3 px-8 md:py-4 md:px-12 bg-black text-[#00b3ff] font-semibold text-lg md:text-xl rounded-full border-2 border-[#00b3ff] shadow-lg transform transition-all hover:scale-105 hover:bg-[#00b3ff] hover:text-black"
           >
             Download CV
@@ -82,7 +82,7 @@ const Home = () => {
         }`}
       >
         <img
-          src="yash2.jpeg"
+          src="2.png"
           alt="yash"
           className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer transform transition-transform duration-1000 text-shadow-main-color box-shadow-main-color hover:scale-110 hover:rotate-6 hover:box-shadow-main-color-hover hover:shadow-[0_0_25px_var(--main-color),_0_0_50px_var(--main-color),_0_0_100px_var(--main-color)]"
         />
