@@ -5,7 +5,7 @@ const competitionsData = [
         title: "IEEEXTreme 18.0",
         subtitle: "By IEEE",
         date: "2024",
-        description: "XTreme was a 24 hour global hackathon organized by IEEE. Achieved Global Rank 513 and Sri Lanka Rank 36 among 9,000+ teams worldwide.",
+        description: "XTreme was a 24 hour global hackathon organized by IEEE. Achieved Global Rank 315 and Sri Lanka Rank 17 among 9,000+ teams worldwide.",
         image: ''
     },
     {
