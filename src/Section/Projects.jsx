@@ -5,7 +5,6 @@ const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [rotation, setRotation] = useState(0);
   const sectionRef = useRef(null);
-  const isHijacked = useRef(false);
   const quantity = projects.length;
   const anglePerCard = 360 / quantity;
 const scrollCount = useRef(0);
