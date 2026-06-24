@@ -1,120 +1,179 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useState, useEffect, useRef } from 'react';
 import projects from './Components/ProjectSection/ProjectData';
 
-const ProjectCard = ({ project }) => {
-  return (
-    <div className="relative mb-10 mx-4 sm:mt-[100px] sm:mx-[20px] w-full sm:w-[220px] md:w-[350px] lg:w-[400px] h-[600px] bg-gray-900 shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 group hover:bg-[#03e9f4] hover:z-10 hover:shadow-[0_0_5px_#03e9f4,0_0_25px_#03e9f4,0_0_50px_#03e9f4,0_0_200px_#03e9f4]">
-      {/* Top and Bottom Border Animation */}
-      <span className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent to-[#00b3ff] animate-slide-horizontal"></span>
-      <span className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-transparent to-[#00b3ff] animate-slide-horizontal"></span>
-      
-      {/* Left and Right Border Animation */}
-      <span className="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-transparent to-[#00b3ff] animate-slide-vertical"></span>
-      <span className="absolute bottom-0 left-0 h-full w-1 bg-gradient-to-t from-transparent to-[#00b3ff] animate-slide-vertical"></span>
-      
-      {/* Card Content */}
-      <img
-        src={project.imageSrc}
-        alt={project.title}
-        className="h-48 w-full object-cover rounded-t-xl"
-      />
-      <div className="p-4 pt-6 pb-4">
-        <h2 className="text-xl font-bold text-gray-100 group-hover:text-black">
-          {project.title}
-        </h2>
-        <p className="text-gray-200 text-sm mt-2 group-hover:text-black">
-          {project.description}
-        </p>
-        <div className="mt-4">
-          <h3 className="text-gray-300 font-medium group-hover:text-black">Tech Used:</h3>
-          <ul className="flex flex-wrap gap-2 mt-2">
-            {project.techUsed.map((tech, index) => (
-              <li
-                key={index}
-                className="bg-[#1c4e83] text-gray-300 text-xs px-2 py-1 rounded-lg group-hover:text-black group-hover:bg-[#00b3ff]"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <p className="text-sm text-gray-300 mt-4 group-hover:text-black mb-10">
-          {project.date}
-        </p>
-      </div>
-    </div>
-  );
+const Projects = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const sectionRef = useRef(null);
+  const isHijacked = useRef(false);
+  const quantity = projects.length;
+  const anglePerCard = 360 / quantity;
+const scrollCount = useRef(0);
+const hasCompleted = useRef(false);
+
+  useEffect(() => {
+  const section = sectionRef.current;
+
+  
+
+const onWheel = (e) => {
+  const rect = section.getBoundingClientRect();
+  const inView = rect.top <= 100 && rect.bottom >= 100;
+
+  if (!inView || hasCompleted.current) return;
+
+  e.preventDefault();
+
+  setRotation((prev) => {
+    const next = e.deltaY > 0 ? prev - anglePerCard : prev + anglePerCard;
+    const normalised = ((-next % 360) + 360) % 360;
+    const index = Math.round(normalised / anglePerCard) % quantity;
+    setActiveIndex(index);
+
+    if (e.deltaY > 0) {
+      scrollCount.current += 1;
+    }
+
+    if (scrollCount.current >= quantity) {
+      hasCompleted.current = true;
+    }
+
+    return next;
+  });
 };
 
-const ProjectsSection = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+  window.addEventListener('wheel', onWheel, { passive: false });
+  return () => window.removeEventListener('wheel', onWheel);
+}, [anglePerCard, quantity]);
+
+  const goNext = () => {
+    setRotation((prev) => {
+      const next = prev - anglePerCard;
+      const normalised = ((-next % 360) + 360) % 360;
+      const index = Math.round(normalised / anglePerCard) % quantity;
+      setActiveIndex(index);
+      return next;
+    });
+  };
+
+  const goPrev = () => {
+    setRotation((prev) => {
+      const next = prev + anglePerCard;
+      const normalised = ((-next % 360) + 360) % 360;
+      const index = Math.round(normalised / anglePerCard) % quantity;
+      setActiveIndex(index);
+      return next;
+    });
   };
 
   return (
-    <section id="projects" className="py-12 bg-transparent rounded">
-      <div className="container mx-auto px-6">
+   <section
+  id="projects"
+  ref={sectionRef}
+  className="relative w-full min-h-[130vh] overflow-hidden bg-transparent flex flex-col items-center pt-16"
+>
+      {/* Title */}
+      {/* Faded background title */}
+<div className="container mx-auto px-6">
         <h1 className="text-5xl font-bold text-center text-white mb-8 font-badscript">
           My Projects
         </h1>
-        <Slider {...settings}>
-          {projects.map((project, index) => (
-            <div key={index} className="px-4">
-              <ProjectCard project={project} />
-            </div>
+</div>
+
+      {/* 3D Carousel */}
+      <div className="relative w-full flex items-center justify-center" style={{ height: '400px', perspective: '1400px' }}>
+        <div
+          className="relative"
+          style={{
+            width: '200px',
+            height: '250px',
+            transformStyle: 'preserve-3d',
+            transform: `rotateX(-8deg) rotateY(${rotation}deg)`,
+            transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+          }}
+        >
+          {projects.map((project, index) => {
+            const isFront = index === activeIndex;
+            return (
+              <div
+                key={index}
+                className="absolute inset-0 cursor-pointer"
+                style={{
+                  transform: `rotateY(${index * anglePerCard}deg) translateZ(550px)`,
+                }}
+                onClick={() => {
+                  const diff = index - activeIndex;
+                  setRotation((prev) => prev - diff * anglePerCard);
+                  setActiveIndex(index);
+                }}
+              >
+                {/* Card Image */}
+                <img
+                  src={project.imageSrc}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-xl shadow-lg"
+                  style={{
+                    border: isFront ? '2px solid #00b3ff' : '2px solid transparent',
+                    boxShadow: isFront ? '0 0 20px #00b3ff' : 'none',
+                    transition: 'all 0.3s ease',
+                  }}
+                />
+
+                {/* Title overlay on front card only */}
+                {isFront && (
+                  <div
+                    className="absolute bottom-0 left-0 right-0 rounded-b-xl px-2 py-2 text-center"
+                    style={{ background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)' }}
+                  >
+                    {/* <p className="text-[#00b3ff] text-xs font-bold leading-tight">
+                      {project.title}
+                    </p> */}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Prev / Next Buttons */}
+      <div className="flex gap-6 mt-6">
+        <button
+          onClick={goPrev}
+          className="px-5 py-2 rounded-full border border-[#00b3ff] text-[#00b3ff] text-sm hover:bg-[#00b3ff] hover:text-black transition-all duration-300"
+        >
+          ← Prev
+        </button>
+        <button
+          onClick={goNext}
+          className="px-5 py-2 rounded-full border border-[#00b3ff] text-[#00b3ff] text-sm hover:bg-[#00b3ff] hover:text-black transition-all duration-300"
+        >
+          Next →
+        </button>
+      </div>
+
+      {/* Project Info Below */}
+<div className="mt-8 text-center px-6 max-w-2xl transition-all duration-500 relative z-10 bg-transparent">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#00b3ff] mb-3">
+          {projects[activeIndex].title}
+        </h2>
+        <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
+          {projects[activeIndex].description}
+        </p>
+        <div className="flex flex-wrap justify-center gap-2">
+          {projects[activeIndex].techUsed.map((tech, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 text-xs rounded-full border border-[#00b3ff] text-[#00b3ff]"
+            >
+              {tech}
+            </span>
           ))}
-        </Slider>
+        </div>
+        <p className="text-gray-500 text-xs mt-3">{projects[activeIndex].date}</p>
       </div>
     </section>
   );
 };
 
-const SampleNextArrow = ({ className, style, onClick }) => {
-  return (
-    <div
-      className={`${className} slick-next !w-[60px] !h-[60px] bg-white/30 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center absolute right-[-70px] top-1/2 transform -translate-y-1/2 !z-50`}
-      style={{ ...style, display: "flex" }}
-      onClick={onClick}
-    >
-      ➜
-    </div>
-  );
-};
-
-const SamplePrevArrow = ({ className, style, onClick }) => {
-  return (
-    <div
-      className={`${className} slick-prev !w-[60px] !h-[60px] bg-white/30 rounded-full cursor-pointer hover:bg-white/50 flex items-center justify-center absolute left-[-70px] top-1/2 transform -translate-y-1/2 !z-50`}
-      style={{ ...style, display: "flex" }}
-      onClick={onClick}
-    >
-      ➜
-    </div>
-  );
-};
-
-
-export default ProjectsSection;
+export default Projects;
