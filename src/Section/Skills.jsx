@@ -38,7 +38,7 @@ const Skills = () => {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [animationOrder]);
 
   const isActive = (id) => step >= animationOrder.indexOf(id);
 
