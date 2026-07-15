@@ -28,9 +28,10 @@ const Contact = () => {
         'service_5mewqci', // Replace with your EmailJS service ID
         'template_sygws5b', // Replace with your EmailJS template ID
         {
+          to_name: 'Yashodha',
           from_name: formData.name,
           email: formData.email,
-          subject: formData.subject,
+          // subject: formData.subject,
           message: formData.message,
         },
         'qtiNx0UgYxXZQAVLX' // Replace with your EmailJS public key

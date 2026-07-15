@@ -82,9 +82,9 @@ const Home = () => {
         }`}
       >
         <img
-          src="2.png"
+          src="yash.png"
           alt="yash"
-          className="w-[50vw] md:w-[30vw] lg:w-[26vw] rounded-full cursor-pointer transform transition-transform duration-1000 text-shadow-main-color box-shadow-main-color hover:scale-110 hover:rotate-6 hover:box-shadow-main-color-hover hover:shadow-[0_0_25px_var(--main-color),_0_0_50px_var(--main-color),_0_0_100px_var(--main-color)]"
+          className="w-[50vw] md:w-[30vw] lg:w-[20vw] lg:h-[55vh] object-cover rounded-full cursor-pointer transform transition-transform duration-1000 text-shadow-main-color box-shadow-main-color hover:scale-110 hover:rotate-6 hover:box-shadow-main-color-hover hover:shadow-[0_0_25px_var(--main-color),_0_0_50px_var(--main-color),_0_0_100px_var(--main-color)]"
         />
       </div>
     </section>

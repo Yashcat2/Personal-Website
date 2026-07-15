@@ -83,15 +83,15 @@ code {
 @keyframes words {
   0%,
   20% {
-    content: "Frontend Developer";
+    content: "FrontEnd Developer";
   }
   21%,
   40% {
-    content: "Web Developer";
+    content: "BackEnd Developer";
   }
   41%,
   60% {
-    content: "UI / UX Designer";
+    content: "Cyber Security Enthusiast";
   }
   61%,
   80% {
